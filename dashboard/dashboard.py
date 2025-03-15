@@ -12,10 +12,10 @@ st.set_page_config(
     layout="wide"
 )
 
-# Load data utama
 @st.cache_data
 def load_data():
-    all_df = pd.read_csv("dataset/all_data.csv")
+    url = "https://drive.google.com/uc?id=1MBDqR1DvRutt-Tvmxi5TXtrq4xZBPKww"
+    all_df = pd.read_csv(url)
     # Konversi kolom tanggal ke datetime
     all_df['order_purchase_timestamp'] = pd.to_datetime(all_df['order_purchase_timestamp'])
     # Menambahkan kolom tambahan untuk filtering
